@@ -45,13 +45,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/views.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="36" selection-start="479" selection-end="479" vertical-scroll-proportion="0.37458193" vertical-offset="0" max-vertical-offset="1071">
+            <state line="16" column="36" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="87" selection-start="174" selection-end="174" vertical-scroll-proportion="0.058486238" vertical-offset="0" max-vertical-offset="872">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,6 +93,7 @@
         <option value="$PROJECT_DIR$/js/models/models.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/views/views.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -326,10 +339,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/views/views.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="36" selection-start="479" selection-end="479" vertical-scroll-proportion="0.37458193" vertical-offset="0" max-vertical-offset="1071">
+        <state line="16" column="36" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="87" selection-start="174" selection-end="174" vertical-scroll-proportion="0.058486238" vertical-offset="0" max-vertical-offset="872">
+          <folding />
         </state>
       </provider>
     </entry>
