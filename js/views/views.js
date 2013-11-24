@@ -1,44 +1,46 @@
 /*jslint browser: true*/
-/*global $, jQuery, Backbone*/
+/*global $, jQuery, Backbone, excerciseOne*/
 
 var ExcerciseView = Backbone.View.extend({
-    el : '#container',
-    initialize : function () {
+    el: '#container',
+    initialize: function () {
         "use strict";
-        console.log("initialized");
         this.template = $("#list-template").children();
         this.render();
     },
-    events : {
-        "click button" : "validate"
+    events: {
+        "click button": "validate"
     },
-    render : function () {
+    render: function () {
         "use strict";
-        var data = this.model.get('data'), i, li, img, input;
+        var data = this.model.get('data'), i, li, img, input, p;
+        this.$el.find('ul').empty();
         for (i = 0; i < data.length; i++) {
             li = this.template.clone();
-            img = li.find('img').attr({src : data[i].pict}).end();
+            img = li.find('img').attr({src: data[i].pict}).end();
             input = li.find('input[type=text]').val(data[i].name).end();
+            p = li.find('p').text(data[i].isValid);
             li.append(img);
             li.append(input);
+            li.append(p);
             this.$el.find('ul').append(li);
         }
     },
-    validate : function (attributes) {
+    validate: function (e) {
         "use strict";
-        var answers = $("#formAnswers").serializeArray(), i, answer;
-        for (i in answers ) {
-            answer = $.trim(answers[i].value).toLowerCase();
-            console.log("------------------");
-            console.log("Answer: " + answer);
-            console.log("------------------");
+        var answers = $("#formAnswers").serializeArray(), i, formAnswer, model;
+        model = this.model.get('data');
+        for (i in answers) {
+            formAnswer = $.trim(answers[i].value).toLowerCase();
+            model[i].name = formAnswer;
+            if (model[i].name === model[i].answer) {
+                model[i].isValid = true;
+            } else {
+                model[i].isValid = false;
+            }
         }
-        /*if(attributes.answer === $.trim(this.get('answer').toLowerCase())) {
-         return this.set('isValid', "valid");
-         } else {
-         return this.set('isValid', "invalid");
-         }*/
+        this.render();
     }
 });
 
-var excercise = new ExcerciseView({model : excerciseOne});
+var excercise = new ExcerciseView({model: excerciseOne});

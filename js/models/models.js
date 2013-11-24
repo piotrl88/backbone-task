@@ -32,42 +32,36 @@ var ExcerciseCollection = Backbone.Collection.extend({
 var excerciseOne = new Excercise1({
     data: [
         {
-            id: 1,
             name: "fogg",
             pict: "img/exercise1/1.png",
             isValid: null,
             answer: "foggy"
         },
         {
-            id: 2,
             name: "raining",
             pict: "img/exercise1/2.png",
             isValid: null,
             answer: "raining"
         },
         {
-            id: 3,
             name: "sunny",
             pict: "img/exercise1/3.png",
             isValid: null,
             answer: "sunny"
         },
         {
-            id: 4,
             name: "cloudy",
             pict: "img/exercise1/4.png",
             isValid: null,
             answer: "cloudy"
         },
         {
-            id: 5,
             name: "windy",
             pict: "img/exercise1/5.png",
             isValid: null,
             answer: "windy"
         },
         {
-            id: 6,
             name: "snowing",
             pict: "img/exercise1/6.png",
             isValid: null,
