@@ -9,30 +9,41 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="deploy/css/styles.css" />
     </head>
     <body>
 
-        <div id="container">
+        <div class="content"></div>
+
+        <script type="text/template" id="list-template">
+            <div class="section-title">
+                <h2>Exercise 3 Vocabulary</h2>
+                <h3>Label the weather symbols.</h3>
+            </div>
+
             <form id="formAnswers">
-            <ul id="list">
-            </ul>
+                <ul id="list">
+                    <% _.each(data, function (item) { %>
+                    <li class="ex-item">
+                        <p style="float: left"><%- item.isValid %></p>
+                        <img src="<%- item.pict %>" alt="icon" />
+                        <input type="text" name="inputAnswer" value="<%- item.name %>" />
+                    </li>
+                    <% }); %>
+                </ul>
             </form>
+
+            <div class="hint">
+                <div class="hint-content ex1">
+                    <% _.each(data, function (item) { %>
+                        <p><%- item.answer %></p>
+                    <% }); %>
+                </div>
+            </div>
+
             <button>Check</button>
-        </div>
+        </script>
 
-        <div id="list-template">
-            <li>
-                <p style="float: left"></p>
-                <img src="" alt="icon" />
-                <input type="text" name="inputAnswer" value="" />
-            </li>
-        </div>
-
-        <script src="js/vendor/jquery-1.10.2.min.js"></script>
-        <script src="js/vendor/underscore.js"></script>
-        <script src="js/vendor/backbone.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/models/models.js"></script>
-        <script src="js/views/views.js"></script>
+        <script type="text/javascript" src="deploy/js/main.js"></script>
     </body>
 </html>

@@ -1,11 +1,11 @@
 /*jslint browser: true*/
-/*global $, jQuery, Backbone, excerciseOne*/
+/*global $, jQuery, Backbone, excercise*/
 
 var ExcerciseView = Backbone.View.extend({
-    el: '#container',
+    el: '.content',
     initialize: function () {
         "use strict";
-        this.template = $("#list-template").children();
+        this.template = _.template($("#list-template").html());
         this.render();
     },
     events: {
@@ -13,18 +13,12 @@ var ExcerciseView = Backbone.View.extend({
     },
     render: function () {
         "use strict";
-        var data = this.model.get('data'), i, li, img, input, p;
-        this.$el.find('ul').empty();
-        for (i = 0; i < data.length; i++) {
-            li = this.template.clone();
-            img = li.find('img').attr({src: data[i].pict}).end();
-            input = li.find('input[type=text]').val(data[i].name).end();
-            p = li.find('p').text(data[i].isValid);
-            li.append(img);
-            li.append(input);
-            li.append(p);
-            this.$el.find('ul').append(li);
-        }
+        var data = this.model.get('data'), items;
+        items = {
+            data : data
+        };
+        this.$el.html(this.template(items));
+        return this.el;
     },
     validate: function (e) {
         "use strict";
@@ -42,5 +36,3 @@ var ExcerciseView = Backbone.View.extend({
         this.render();
     }
 });
-
-var excercise = new ExcerciseView({model: excerciseOne});

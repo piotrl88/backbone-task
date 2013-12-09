@@ -1,15 +1,9 @@
 /*jslint browser: true*/
 /*global $, jQuery, Backbone*/
 
-var Excercise1 = Backbone.Model.extend({
+var Excercise = Backbone.Model.extend({
     initialize: function () {
         "use strict";
-        this.bind("change:answer", function () {
-            console.log("Answer change to " + this.get("answer"));
-        });
-        this.bind("error", function (model, error) {
-            console.log(error);
-        });
     },
     defaults: {
         data : [{
@@ -24,12 +18,11 @@ var Excercise1 = Backbone.Model.extend({
 var ExcerciseCollection = Backbone.Collection.extend({
     initialize : function () {
         "use strict";
-        console.log("start collection");
     },
-    model : Excercise1
+    model : Excercise
 });
 
-var excerciseOne = new Excercise1({
+var excercise = new Excercise({
     data: [
         {
             name: "fogg",
